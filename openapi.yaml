@@ -1,0 +1,218 @@
+openapi: 3.1.0
+info:
+  title: Petstore
+  summary: This API stores data about available pets
+  description: The API enables users to view detailed information about a specific
+    pet store and its available pets. The API can be used by pet owners, pet
+    adoption agencies, and anyone looking for information about pets in a
+    particular area.
+  contact:
+    name: APIMatic
+    url: https://www.sdks.io/contact
+    email: support@sdks.io
+  version: 1.0.0
+jsonSchemaDialect: https://json-schema.org/draft/2020-12/schema
+servers:
+  - url: https://src8wr32cg.api.quickmocker.com
+    description: API mocking server for demo purposes
+paths:
+  /pets:
+    description: endpoints for multiple pet related actions
+    post:
+      tags:
+        - pets
+      summary: createPets
+      description: Create a pet and key characteristics
+      operationId: createPets
+      parameters: []
+      requestBody:
+        description: A single Pet object used to create a new Pet
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Pet"
+            example:
+              id: 12345
+              name: Indiana
+              petType: dog
+      responses:
+        "201":
+          description: Null response
+          headers: {}
+          content: {}
+        default:
+          description: unexpected error
+          headers: {}
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+              example:
+                code: 101010
+                message: Invalid pet type, only cat and dogs allowed
+      deprecated: false
+    get:
+      tags:
+        - pets
+      summary: listPets
+      description: List all pets
+      operationId: listPets
+      parameters:
+        - name: limit
+          in: query
+          description: How many items to return at one time (max 100)
+          style: form
+          explode: true
+          schema:
+            maximum: 100
+            type: integer
+            contentEncoding: int32
+          example: 10
+      responses:
+        "200":
+          description: A paged array of pets
+          headers:
+            x-next:
+              description: A link to the next page of responses
+              content:
+                text/plain:
+                  schema:
+                    type: string
+                    description: A link to the next page of responses
+                    contentMediaType: text/plain
+                  example: https://api.petstore.com/v1/pets?count=2&offset=5
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ListPetsResponse200Json"
+              example:
+                - id: 12345
+                  name: Indiana
+                  petType: dog
+                - id: 56789
+                  name: Shadow
+                  petType: cat
+        default:
+          description: unexpected error
+          headers: {}
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+              example:
+                code: 101010
+                message: Invalid pet type, only cat and dogs allowed
+      deprecated: false
+    parameters: []
+  "/pets/{petId}":
+    description: endpoint for a unique pet actions
+    get:
+      tags:
+        - pets
+      summary: showPetById
+      description: Info for a specific pet
+      operationId: showPetById
+      parameters:
+        - name: petId
+          in: path
+          description: The id of the pet to retrieve
+          required: true
+          style: simple
+          schema:
+            type: string
+          example: 33918
+      responses:
+        "200":
+          description: Expected response to a valid request
+          headers: {}
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Pet"
+              example:
+                id: 12345
+                name: Cody
+                petType: dog
+        default:
+          description: unexpected error
+          headers: {}
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+              example:
+                code: 101010
+                message: Invalid pet type, only cat and dogs allowed
+      deprecated: false
+    parameters: []
+components:
+  schemas:
+    Pet:
+      allOf:
+        - $ref: "#/components/schemas/NewPet"
+        - $ref: "#/components/schemas/Pet1"
+    NewPet:
+      type: object
+      required:
+        - name
+      properties:
+        name:
+          type: string
+          description: the name lovingly given to the pet
+          example: Fido
+        type:
+          $ref: "#/components/schemas/PetType"
+          type: string
+          example: dog
+    PetType:
+      type: string
+      description: the type of pets allowed
+      enum:
+        - dog
+        - cat
+    Error:
+      title: Error
+      required:
+        - code
+        - message
+      type: object
+      properties:
+        code:
+          type: integer
+          description: the code associated with the error returned
+          contentEncoding: int32
+          example: 101010
+        message:
+          type: string
+          description: detailed message about the error returned
+          example: Invalid pet type, only cat and dogs allowed
+    ListPetsResponse200Json:
+      maxItems: 100
+      type: array
+      items:
+        $ref: "#/components/schemas/Pet"
+      description: ""
+      contentMediaType: application/json
+    Pet1:
+      type: object
+      title: Pet
+      description: A single Pet object
+      required:
+        - id
+      properties:
+        id:
+          type: integer
+          description: a unique identifier for a Pet
+          contentEncoding: int64
+          example: 1234
+  securitySchemes:
+    bearerAuth:
+      type: http
+      description: bearer token security
+      scheme: bearer
+security:
+  - bearerAuth: []
+tags:
+  - name: pets
+    description: the pet grouping
