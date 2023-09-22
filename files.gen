@@ -29,8 +29,6 @@ src/sdk/models/shared/pettype.ts
 src/sdk/models/shared/security.ts
 src/sdk/models/shared/index.ts
 src/sdk/models/errors/index.ts
-docs/sdks/petstore/README.md
-docs/sdks/pets/README.md
 USAGE.md
 docs/models/operations/createpetsresponse.md
 docs/models/operations/listpetsrequest.md
@@ -41,4 +39,6 @@ docs/models/shared/errort.md
 docs/models/shared/pet.md
 docs/models/shared/pettype.md
 docs/models/shared/security.md
+docs/sdks/petstore/README.md
+docs/sdks/pets/README.md
 .gitattributes

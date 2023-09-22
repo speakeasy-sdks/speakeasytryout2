@@ -68,7 +68,7 @@ const sdk = new Petstore({
 });
 
 sdk.pets.listPets({
-  limit: 715190,
+  limit: 844266,
 }).then((res: ListPetsResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -106,7 +106,7 @@ const sdk = new Petstore({
 });
 
 sdk.pets.showPetById({
-  petId: "quibusdam",
+  petId: "unde",
 }).then((res: ShowPetByIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
