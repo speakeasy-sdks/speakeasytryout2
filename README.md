@@ -51,7 +51,7 @@ sdk.pets.createPets({
 ## Available Resources and Operations
 
 
-### [Pets](docs/sdks/pets/README.md)
+### [pets](docs/sdks/pets/README.md)
 
 * [createPets](docs/sdks/pets/README.md#createpets) - createPets
 * [listPets](docs/sdks/pets/README.md#listpets) - listPets
