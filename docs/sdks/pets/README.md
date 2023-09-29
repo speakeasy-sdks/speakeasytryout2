@@ -69,7 +69,7 @@ const sdk = new Petstore({
 });
 
 sdk.pets.listPets({
-  limit: 844266,
+  limit: 21453,
 }).then((res: ListPetsResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -107,7 +107,7 @@ const sdk = new Petstore({
 });
 
 sdk.pets.showPetById({
-  petId: "unde",
+  petId: "South bandwidth male",
 }).then((res: ShowPetByIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
