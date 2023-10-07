@@ -19,24 +19,24 @@ Create a pet and key characteristics
 
 ```typescript
 import { Petstore } from "petstore";
-import { CreatePetsResponse } from "petstore/dist/sdk/models/operations";
 import { PetType } from "petstore/dist/sdk/models/shared";
 
-const sdk = new Petstore({
-  security: {
-    bearerAuth: "",
-  },
-});
+(async() => {
+  const sdk = new Petstore({
+    security: {
+      bearerAuth: "",
+    },
+  });
 
-sdk.pets.createPets({
-  id: 1234,
-  name: "Fido",
-  type: PetType.Cat,
-}).then((res: CreatePetsResponse) => {
+  const res = await sdk.pets.createPets({
+    id: 1234,
+    name: "Fido",
+  });
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -60,21 +60,20 @@ List all pets
 
 ```typescript
 import { Petstore } from "petstore";
-import { ListPetsResponse } from "petstore/dist/sdk/models/operations";
 
-const sdk = new Petstore({
-  security: {
-    bearerAuth: "",
-  },
-});
+(async() => {
+  const sdk = new Petstore({
+    security: {
+      bearerAuth: "",
+    },
+  });
 
-sdk.pets.listPets({
-  limit: 21453,
-}).then((res: ListPetsResponse) => {
+  const res = await sdk.pets.listPets({});
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -98,21 +97,22 @@ Info for a specific pet
 
 ```typescript
 import { Petstore } from "petstore";
-import { ShowPetByIdResponse } from "petstore/dist/sdk/models/operations";
 
-const sdk = new Petstore({
-  security: {
-    bearerAuth: "",
-  },
-});
+(async() => {
+  const sdk = new Petstore({
+    security: {
+      bearerAuth: "",
+    },
+  });
 
-sdk.pets.showPetById({
-  petId: "South bandwidth male",
-}).then((res: ShowPetByIdResponse) => {
+  const res = await sdk.pets.showPetById({
+    petId: "South bandwidth male",
+  });
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
