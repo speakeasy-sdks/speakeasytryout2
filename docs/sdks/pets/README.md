@@ -1,5 +1,5 @@
 # Pets
-(*pets*)
+(*.pets*)
 
 ## Overview
 
@@ -32,6 +32,7 @@ import { PetType } from "petstore/dist/sdk/models/shared";
     id: 1234,
     name: "Fido",
   });
+
 
   if (res.statusCode == 200) {
     // handle response
@@ -69,6 +70,7 @@ import { Petstore } from "petstore";
   });
 
   const res = await sdk.pets.listPets({});
+
 
   if (res.statusCode == 200) {
     // handle response
@@ -108,6 +110,7 @@ import { Petstore } from "petstore";
   const res = await sdk.pets.showPetById({
     petId: "string",
   });
+
 
   if (res.statusCode == 200) {
     // handle response
