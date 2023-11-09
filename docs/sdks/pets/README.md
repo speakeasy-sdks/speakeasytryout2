@@ -1,5 +1,5 @@
 # Pets
-(*.pets*)
+(*pets*)
 
 ## Overview
 
@@ -33,7 +33,6 @@ import { PetType } from "petstore/dist/sdk/models/shared";
     name: "Fido",
   });
 
-
   if (res.statusCode == 200) {
     // handle response
   }
@@ -44,14 +43,18 @@ import { PetType } from "petstore/dist/sdk/models/shared";
 
 | Parameter                                                    | Type                                                         | Required                                                     | Description                                                  |
 | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| `request`                                                    | [shared.Pet](../../models/shared/pet.md)                     | :heavy_check_mark:                                           | The request object to use for the request.                   |
+| `request`                                                    | [shared.Pet](../../sdk/models/shared/pet.md)                 | :heavy_check_mark:                                           | The request object to use for the request.                   |
 | `config`                                                     | [AxiosRequestConfig](https://axios-http.com/docs/req_config) | :heavy_minus_sign:                                           | Available config options for making requests.                |
 
 
 ### Response
 
-**Promise<[operations.CreatePetsResponse](../../models/operations/createpetsresponse.md)>**
+**Promise<[operations.CreatePetsResponse](../../sdk/models/operations/createpetsresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## listPets
 
@@ -71,7 +74,6 @@ import { Petstore } from "petstore";
 
   const res = await sdk.pets.listPets({});
 
-
   if (res.statusCode == 200) {
     // handle response
   }
@@ -80,16 +82,20 @@ import { Petstore } from "petstore";
 
 ### Parameters
 
-| Parameter                                                                | Type                                                                     | Required                                                                 | Description                                                              |
-| ------------------------------------------------------------------------ | ------------------------------------------------------------------------ | ------------------------------------------------------------------------ | ------------------------------------------------------------------------ |
-| `request`                                                                | [operations.ListPetsRequest](../../models/operations/listpetsrequest.md) | :heavy_check_mark:                                                       | The request object to use for the request.                               |
-| `config`                                                                 | [AxiosRequestConfig](https://axios-http.com/docs/req_config)             | :heavy_minus_sign:                                                       | Available config options for making requests.                            |
+| Parameter                                                                    | Type                                                                         | Required                                                                     | Description                                                                  |
+| ---------------------------------------------------------------------------- | ---------------------------------------------------------------------------- | ---------------------------------------------------------------------------- | ---------------------------------------------------------------------------- |
+| `request`                                                                    | [operations.ListPetsRequest](../../sdk/models/operations/listpetsrequest.md) | :heavy_check_mark:                                                           | The request object to use for the request.                                   |
+| `config`                                                                     | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                 | :heavy_minus_sign:                                                           | Available config options for making requests.                                |
 
 
 ### Response
 
-**Promise<[operations.ListPetsResponse](../../models/operations/listpetsresponse.md)>**
+**Promise<[operations.ListPetsResponse](../../sdk/models/operations/listpetsresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## showPetById
 
@@ -111,7 +117,6 @@ import { Petstore } from "petstore";
     petId: "string",
   });
 
-
   if (res.statusCode == 200) {
     // handle response
   }
@@ -120,13 +125,17 @@ import { Petstore } from "petstore";
 
 ### Parameters
 
-| Parameter                                                                      | Type                                                                           | Required                                                                       | Description                                                                    |
-| ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ |
-| `request`                                                                      | [operations.ShowPetByIdRequest](../../models/operations/showpetbyidrequest.md) | :heavy_check_mark:                                                             | The request object to use for the request.                                     |
-| `config`                                                                       | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                   | :heavy_minus_sign:                                                             | Available config options for making requests.                                  |
+| Parameter                                                                          | Type                                                                               | Required                                                                           | Description                                                                        |
+| ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- |
+| `request`                                                                          | [operations.ShowPetByIdRequest](../../sdk/models/operations/showpetbyidrequest.md) | :heavy_check_mark:                                                                 | The request object to use for the request.                                         |
+| `config`                                                                           | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                       | :heavy_minus_sign:                                                                 | Available config options for making requests.                                      |
 
 
 ### Response
 
-**Promise<[operations.ShowPetByIdResponse](../../models/operations/showpetbyidresponse.md)>**
+**Promise<[operations.ShowPetByIdResponse](../../sdk/models/operations/showpetbyidresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
