@@ -24,6 +24,8 @@ yarn add petstore
 
 ## SDK Example Usage
 <!-- Start SDK Example Usage -->
+### Example
+
 ```typescript
 import { Petstore } from "petstore";
 import { PetType } from "petstore/dist/sdk/models/shared";
@@ -80,7 +82,7 @@ Here's an example of one such pagination call:
 
 
 <!-- Start Error Handling -->
-# Error Handling
+## Error Handling
 
 Handling errors in this SDK should largely match your expectations.  All operations return a response object or throw an error.  If Error objects are specified in your OpenAPI Spec, the SDK will throw the appropriate Error type.
 
@@ -88,8 +90,7 @@ Handling errors in this SDK should largely match your expectations.  All operati
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 400-600         | */*             |
 
-
-## Example
+Example
 
 ```typescript
 import { Petstore } from "petstore";
@@ -121,9 +122,9 @@ import { PetType } from "petstore/dist/sdk/models/shared";
 
 
 <!-- Start Server Selection -->
-# Server Selection
+## Server Selection
 
-## Select Server by Index
+### Select Server by Index
 
 You can override the default server globally by passing a server index to the `serverIdx: number` optional parameter when initializing the SDK client instance. The selected server will then be used as the default on the operations that use it. This table lists the indexes associated with the available servers:
 
@@ -131,7 +132,7 @@ You can override the default server globally by passing a server index to the `s
 | - | ------ | --------- |
 | 0 | `https://src8wr32cg.api.quickmocker.com` | None |
 
-For example:
+#### Example
 
 ```typescript
 import { Petstore } from "petstore";
@@ -158,10 +159,9 @@ import { PetType } from "petstore/dist/sdk/models/shared";
 ```
 
 
-## Override Server URL Per-Client
+### Override Server URL Per-Client
 
 The default server can also be overridden globally by passing a URL to the `serverURL: str` optional parameter when initializing the SDK client instance. For example:
-
 ```typescript
 import { Petstore } from "petstore";
 import { PetType } from "petstore/dist/sdk/models/shared";
@@ -190,10 +190,9 @@ import { PetType } from "petstore/dist/sdk/models/shared";
 
 
 <!-- Start Custom HTTP Client -->
-# Custom HTTP Client
+## Custom HTTP Client
 
 The Typescript SDK makes API calls using the (axios)[https://axios-http.com/docs/intro] HTTP library.  In order to provide a convenient way to configure timeouts, cookies, proxies, custom headers, and other low-level configuration, you can initialize the SDK client with a custom `AxiosInstance` object.
-
 
 For example, you could specify a header for every request that your sdk makes as follows:
 
@@ -205,7 +204,6 @@ const httpClient = axios.create({
     headers: {'x-custom-header': 'someValue'}
 })
 
-
 const sdk = new Petstore({defaultClient: httpClient});
 ```
 <!-- End Custom HTTP Client -->
@@ -213,9 +211,9 @@ const sdk = new Petstore({defaultClient: httpClient});
 
 
 <!-- Start Authentication -->
-# Authentication
+## Authentication
 
-## Per-Client Security Schemes
+### Per-Client Security Schemes
 
 This SDK supports the following security scheme globally:
 
@@ -224,7 +222,6 @@ This SDK supports the following security scheme globally:
 | `bearerAuth` | http         | HTTP Bearer  |
 
 You can set the security parameters through the `security` optional parameter when initializing the SDK client instance. For example:
-
 ```typescript
 import { Petstore } from "petstore";
 import { PetType } from "petstore/dist/sdk/models/shared";

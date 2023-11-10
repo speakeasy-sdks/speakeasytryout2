@@ -1,6 +1,4 @@
 <!-- Start SDK Example Usage -->
-
-
 ```typescript
 import { Petstore } from "petstore";
 import { PetType } from "petstore/dist/sdk/models/shared";
