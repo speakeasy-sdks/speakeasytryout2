@@ -21,10 +21,10 @@ Create a pet and key characteristics
 import { Petstore } from "petstore";
 import { PetType } from "petstore/dist/sdk/models/shared";
 
-(async() => {
+async function run() {
   const sdk = new Petstore({
     security: {
-      bearerAuth: "",
+      bearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
     },
   });
 
@@ -36,7 +36,9 @@ import { PetType } from "petstore/dist/sdk/models/shared";
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
@@ -65,10 +67,10 @@ List all pets
 ```typescript
 import { Petstore } from "petstore";
 
-(async() => {
+async function run() {
   const sdk = new Petstore({
     security: {
-      bearerAuth: "",
+      bearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
     },
   });
 
@@ -77,7 +79,9 @@ import { Petstore } from "petstore";
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
@@ -106,10 +110,10 @@ Info for a specific pet
 ```typescript
 import { Petstore } from "petstore";
 
-(async() => {
+async function run() {
   const sdk = new Petstore({
     security: {
-      bearerAuth: "",
+      bearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
     },
   });
 
@@ -120,7 +124,9 @@ import { Petstore } from "petstore";
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
