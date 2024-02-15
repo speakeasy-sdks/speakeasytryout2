@@ -118,7 +118,7 @@ async function run() {
   });
 
   const res = await sdk.pets.showPetById({
-    petId: "string",
+    petId: "<value>",
   });
 
   if (res.statusCode == 200) {
