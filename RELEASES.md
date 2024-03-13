@@ -209,3 +209,13 @@ Based on:
 - [typescript v0.9.2] .
 ### Releases
 - [NPM v0.9.2] https://www.npmjs.com/package/petstore/v/0.9.2 - .
+
+## 2024-03-13 01:13:16
+### Changes
+Based on:
+- OpenAPI Doc 1.0.0 
+- Speakeasy CLI 1.207.1 (2.280.6) https://github.com/speakeasy-api/speakeasy
+### Generated
+- [typescript v0.9.3] .
+### Releases
+- [NPM v0.9.3] https://www.npmjs.com/package/petstore/v/0.9.3 - .

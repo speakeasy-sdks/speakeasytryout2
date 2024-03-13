@@ -3,19 +3,19 @@ id: 75cf69a2-d8a6-4541-b2b5-b13f86798afe
 management:
   docChecksum: 54fce703c0e40f21dcd69c724618bd14
   docVersion: 1.0.0
-  speakeasyVersion: internal
-  generationVersion: 2.258.2
-  releaseVersion: 0.9.2
-  configChecksum: 672a129f4eb805a4da0a787f2c35dcf2
+  speakeasyVersion: 1.207.1
+  generationVersion: 2.280.6
+  releaseVersion: 0.9.3
+  configChecksum: bd752aed77804bfa67682676f23d8ae1
   repoURL: https://github.com/speakeasy-sdks/speakeasytryout2.git
   repoSubDirectory: .
   installationURL: https://github.com/speakeasy-sdks/speakeasytryout2
   published: true
 features:
   typescript:
-    core: 3.4.7
-    globalSecurity: 2.82.2
-    globalServerURLs: 2.82.1
+    core: 3.4.8
+    globalSecurity: 2.82.4
+    globalServerURLs: 2.82.2
 generatedFiles:
   - src/sdk/pets.ts
   - src/sdk/sdk.ts
